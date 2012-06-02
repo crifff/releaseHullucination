@@ -1026,6 +1026,12 @@
 }
 @media (max-width: 480px) {
   /* line 7, ../sass/responsive.sass */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* line 11, ../sass/responsive.sass */
   .hero-unit {
     padding: 20px;
     height: 150px;
@@ -1037,7 +1043,7 @@
     border-radius: 0;
   }
 
-  /* line 13, ../sass/responsive.sass */
+  /* line 17, ../sass/responsive.sass */
   h1 {
     font-size: 3em !important;
   }
