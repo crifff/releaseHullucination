@@ -5425,77 +5425,87 @@ a.label:hover, a.badge:hover {
   visibility: hidden;
 }
 
-/* line 6, ../sass/screen.sass */
+/* line 6, sass/screen.sass */
 body {
   color: white;
+  width: 100%;
   background-color: black;
   background-image: url("../image/cotton02.jpg");
 }
 
-/* line 11, ../sass/screen.sass */
+/* line 12, sass/screen.sass */
 p {
   line-height: 26px !important;
 }
 
-/* line 14, ../sass/screen.sass */
+/* line 15, sass/screen.sass */
 h1, h2, h3, h4, cite {
   font-family: "IM Fell Double Pica SC", serif !important;
 }
 
-/* line 18, ../sass/screen.sass */
+/* line 19, sass/screen.sass */
 .hero-unit {
   height: 300px;
   background-image: url("../image/top.jpg");
 }
-/* line 21, ../sass/screen.sass */
+/* line 22, sass/screen.sass */
 .hero-unit h1 {
   margin-bottom: 11px;
   text-shadow: 0 0 10px black;
 }
 
-/* line 26, ../sass/screen.sass */
+/* line 27, sass/screen.sass */
 .row p, .row dl {
   margin-top: 0;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 31, ../sass/screen.sass */
+/* line 32, sass/screen.sass */
 cite {
   font-size: 2em;
 }
 
-/* line 34, ../sass/screen.sass */
+/* line 35, sass/screen.sass */
 ol {
   margin: 8px 0 6px 19px;
 }
 
-/* line 37, ../sass/screen.sass */
+/* line 38, sass/screen.sass */
 li {
   display: block;
   clear: both;
 }
 
-/* line 41, ../sass/screen.sass */
+/* line 42, sass/screen.sass */
 dl dd {
   margin-bottom: 5px;
 }
 
-/* line 44, ../sass/screen.sass */
+/* line 45, sass/screen.sass */
 div.info {
   float: left;
 }
 
-/* line 47, ../sass/screen.sass */
+/* line 48, sass/screen.sass */
 div.play {
   float: left;
   margin-top: 5px;
   margin-right: 10px;
 }
 
-/* line 53, ../sass/screen.sass */
+/* line 54, sass/screen.sass */
 footer {
   margin-top: 4em;
   padding-top: 1em;
   text-align: center;
+}
+/* line 58, sass/screen.sass */
+footer dt {
+  float: center;
+  clear: both;
+}
+/* line 61, sass/screen.sass */
+footer dd {
+  float: center;
 }
