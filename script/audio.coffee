@@ -1,14 +1,17 @@
 $ ->
-  console.log 'start'
-
   bgm = new Audio
   el = ""
   $(bgm).bind 'loadstart',(e)->
+    console.log 'loadstart'
     $(el).children('i').removeClass('icon-play').addClass('icon-refresh')
   .bind 'loadeddata',(e)->
+    console.log 'loadeddata'
+    $(el).children('i').removeClass('icon-play').addClass('icon-refresh')
     $(el).children('i').removeClass('icon-refresh').addClass('icon-play')
     this.play()
     button_open $(el)
+  .bind 'canplay',(e)->
+    console.log 'canplay'
 
  
   if bgm.canPlayType 'audio/mp3'
@@ -28,6 +31,8 @@ $ ->
 
       $('.play_music').each ->
         button_close $(this), btn
+      if navigator.userAgent.match(/(iPad|iPhone|iPod)/i)
+        bgm.play()
     else
       bgm.pause()
       bgm.currentTime = 0

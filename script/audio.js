@@ -1,15 +1,19 @@
 
 $(function() {
   var bgm, button_close, button_open, el, ext;
-  console.log('start');
   bgm = new Audio;
   el = "";
   $(bgm).bind('loadstart', function(e) {
+    console.log('loadstart');
     return $(el).children('i').removeClass('icon-play').addClass('icon-refresh');
   }).bind('loadeddata', function(e) {
+    console.log('loadeddata');
+    $(el).children('i').removeClass('icon-play').addClass('icon-refresh');
     $(el).children('i').removeClass('icon-refresh').addClass('icon-play');
     this.play();
     return button_open($(el));
+  }).bind('canplay', function(e) {
+    return console.log('canplay');
   });
   if (bgm.canPlayType('audio/mp3')) {
     ext = '.mp3';
@@ -25,9 +29,10 @@ $(function() {
     if (btn.hasClass('btn-primary')) {
       src = (btn.attr('data-src')) + ext;
       bgm.src = src;
-      return $('.play_music').each(function() {
+      $('.play_music').each(function() {
         return button_close($(this), btn);
       });
+      if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) return bgm.play();
     } else {
       bgm.pause();
       bgm.currentTime = 0;
