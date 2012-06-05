@@ -8,8 +8,10 @@ $ ->
   .bind 'loadeddata',(e)->
     $(el).children('i').removeClass('icon-refresh').addClass('icon-play')
     this.play()
+    button_open $(el)
 
-  if(bgm.canPlayType 'audio/mp3')
+ 
+  if bgm.canPlayType 'audio/mp3'
     ext = '.mp3'
   else
     ext = '.ogg'
@@ -25,8 +27,7 @@ $ ->
       bgm.src = src
 
       $('.play_music').each ->
-        button_close($(this))
-      button_open(btn)
+        button_close $(this), btn
     else
       bgm.pause()
       bgm.currentTime = 0
@@ -35,7 +36,9 @@ $ ->
 
     #bgm = document.getElementById('bgm1')
   
-  button_close = (btn)->
+  button_close = (btn,exlude=false)->
+    if exlude and btn.attr('data-src')==exlude.attr 'data-src'
+    else
     btn.removeClass('btn-danger').addClass('btn-primary').children('i').removeClass('icon-stop').addClass('icon-play')
 
   button_open = (btn)->

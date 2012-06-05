@@ -8,7 +8,8 @@ $(function() {
     return $(el).children('i').removeClass('icon-play').addClass('icon-refresh');
   }).bind('loadeddata', function(e) {
     $(el).children('i').removeClass('icon-refresh').addClass('icon-play');
-    return this.play();
+    this.play();
+    return button_open($(el));
   });
   if (bgm.canPlayType('audio/mp3')) {
     ext = '.mp3';
@@ -24,17 +25,20 @@ $(function() {
     if (btn.hasClass('btn-primary')) {
       src = (btn.attr('data-src')) + ext;
       bgm.src = src;
-      $('.play_music').each(function() {
-        return button_close($(this));
+      return $('.play_music').each(function() {
+        return button_close($(this), btn);
       });
-      return button_open(btn);
     } else {
       bgm.pause();
       bgm.currentTime = 0;
       return button_close(btn);
     }
   });
-  button_close = function(btn) {
+  button_close = function(btn, exlude) {
+    if (exlude == null) exlude = false;
+    if (exlude && btn.attr('data-src') === exlude.attr('data-src')) {} else {
+
+    }
     return btn.removeClass('btn-danger').addClass('btn-primary').children('i').removeClass('icon-stop').addClass('icon-play');
   };
   button_open = function(btn) {
