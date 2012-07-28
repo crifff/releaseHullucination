@@ -5428,84 +5428,126 @@ a.label:hover, a.badge:hover {
 /* line 6, ../sass/screen.sass */
 body {
   color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black;
   width: 100%;
   background-color: black;
-  background-image: url("../image/cotton02.jpg");
+  background-image: url("../image/background.jpg");
+  background-attachment: fixed;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
 }
 
-/* line 12, ../sass/screen.sass */
-p {
-  line-height: 26px !important;
+/* line 16, ../sass/screen.sass */
+a {
+  text-shadow: none;
 }
 
-/* line 15, ../sass/screen.sass */
-h1, h2, h3, h4, cite {
-  font-family: "IM Fell Double Pica SC", serif !important;
+/* line 20, ../sass/screen.sass */
+h1, h2, h3, h4 {
+  font-family: serif;
 }
 
-/* line 19, ../sass/screen.sass */
+/* line 22, ../sass/screen.sass */
+cite {
+  font-family: "Fredericka the Great", serif;
+}
+
+/* line 25, ../sass/screen.sass */
+h1 {
+  font-size: 2em;
+}
+
+/* line 28, ../sass/screen.sass */
+h2 {
+  margin-top: 3em;
+}
+
+/* line 31, ../sass/screen.sass */
+.span6 h2 {
+  margin-top: 0;
+}
+
+/* line 34, ../sass/screen.sass */
+.span12 {
+  margin-top: 5em;
+}
+
+/* line 37, ../sass/screen.sass */
 .hero-unit {
   height: 300px;
-  background-image: url("../image/top.jpg");
 }
-/* line 22, ../sass/screen.sass */
+/* line 39, ../sass/screen.sass */
 .hero-unit h1 {
   margin-bottom: 11px;
   text-shadow: 0 0 10px black;
 }
 
-/* line 27, ../sass/screen.sass */
+/* line 44, ../sass/screen.sass */
 .row p, .row dl {
   margin-top: 0;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 32, ../sass/screen.sass */
+/* line 49, ../sass/screen.sass */
 cite {
   font-size: 2em;
 }
 
-/* line 35, ../sass/screen.sass */
+/* line 52, ../sass/screen.sass */
 ol {
   margin: 8px 0 6px 19px;
 }
 
-/* line 38, ../sass/screen.sass */
+/* line 55, ../sass/screen.sass */
 li {
   display: block;
-  clear: both;
+  margin-bottom: 1em;
 }
 
-/* line 42, ../sass/screen.sass */
+/* line 59, ../sass/screen.sass */
+dl {
+  margin: 0;
+}
+/* line 61, ../sass/screen.sass */
+dl dt {
+  margin-bottom: 1em;
+}
+/* line 63, ../sass/screen.sass */
 dl dd {
-  margin-bottom: 5px;
+  margin-bottom: 2em;
 }
 
-/* line 45, ../sass/screen.sass */
+/* line 67, ../sass/screen.sass */
 div.info {
   float: left;
 }
 
-/* line 48, ../sass/screen.sass */
+/* line 70, ../sass/screen.sass */
 div.play {
   float: left;
   margin-top: 5px;
   margin-right: 10px;
 }
 
-/* line 54, ../sass/screen.sass */
+/* line 75, ../sass/screen.sass */
+.clearfix {
+  clear: both;
+}
+
+/* line 78, ../sass/screen.sass */
 footer {
   margin-top: 4em;
   padding-top: 1em;
   text-align: center;
 }
-/* line 58, ../sass/screen.sass */
+/* line 82, ../sass/screen.sass */
 footer dt {
-  float: center;
-  clear: both;
+  margin: 0;
 }
-/* line 61, ../sass/screen.sass */
-footer dd {
-  float: center;
+
+/* line 86, ../sass/screen.sass */
+.banner {
+  border: 1px solid white;
+  margin-bottom: 1em;
 }

@@ -1024,26 +1024,65 @@
     overflow: visible !important;
   }
 }
+@media (min-width: 768px) {
+  /* line 6, ../sass/responsive.sass */
+  header {
+    font-size: 2em;
+    margin-top: 7em;
+    margin-bottom: 5em;
+  }
+  /* line 10, ../sass/responsive.sass */
+  header h1#logo {
+    background-image: url("../image/logo.png");
+    background-repeat: no-repeat;
+    height: 165px;
+  }
+  /* line 14, ../sass/responsive.sass */
+  header h1#logo span {
+    visibility: hidden;
+  }
+  /* line 16, ../sass/responsive.sass */
+  header .description {
+    margin-top: 0.7em;
+    font-size: 1.2em;
+  }
+}
 @media (max-width: 767px) {
-  /* line 7, sass/responsive.sass */
+  /* line 21, ../sass/responsive.sass */
   body {
     margin: 0;
     padding: 0;
+    background-image: none;
+    background-color: black;
   }
 
-  /* line 11, sass/responsive.sass */
-  .hero-unit {
-    padding: 20px;
-    height: 150px;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
+  /* line 27, ../sass/responsive.sass */
+  header {
+    background-image: url("../image/logo_s.png");
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 198px;
   }
+  /* line 35, ../sass/responsive.sass */
+  header p {
+    visibility: hidden;
+    height: 0;
+  }
+  /* line 38, ../sass/responsive.sass */
+  header h1 {
+    visibility: hidden;
+    height: 0;
+  }
+}
+/* line 42, ../sass/responsive.sass */
+.span12 {
+  margin-top: 1em;
+}
 
-  /* line 16, sass/responsive.sass */
-  h1 {
-    font-size: 3em !important;
-  }
+/* line 45, ../sass/responsive.sass */
+cite {
+  font-size: 1.3em;
 }

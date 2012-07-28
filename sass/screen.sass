@@ -5,20 +5,36 @@ $text_color: #fff
 
 body
   color: $text_color
+  text-shadow: 0 0 5px #000, 0 0 5px #000
   width: 100%
   background-color: $background_color
-  background-image: url("../image/cotton02.jpg")
+  background-image: url("../image/background.jpg")
+  background-attachment: fixed
+  background-position: 50% 80%
+  background-repeat: no-repeat
 
-p
-  line-height: 26px !important
+a
+  text-shadow: none
 
-h1,h2,h3,h4,cite
-  font-family: 'IM Fell Double Pica SC', serif !important
+h1,h2,h3,h4
+  font-family: serif
+cite
+  font-family: 'Fredericka the Great', serif
 
+h1
+  font-size: 2em
+
+h2
+  margin-top: 3em
+
+.span6 h2
+  margin-top: 0
+
+.span12 
+  margin-top: 5em
 
 .hero-unit
   height: 300px
-  background-image: url("../image/top.jpg")
   h1
     margin-bottom: 11px
     text-shadow: 0 0 10px #000
@@ -37,10 +53,15 @@ ol
 
 li
   display: block
-  clear: both
+  margin-bottom: 1em
 
-dl dd
-  margin-bottom: 5px
+dl
+  margin: 0
+  dt
+    margin-bottom: 1em
+  dd
+    margin-bottom: 2em
+
 
 div.info
   float: left
@@ -50,13 +71,17 @@ div.play
   margin-top: 5px
   margin-right: 10px
 
+.clearfix
+  clear: both
 
 footer
   margin-top: 4em
   padding-top: 1em
   text-align: center
   dt
-    float: center
-    clear: both
+    margin: 0
   dd
-    float: center
+
+.banner
+  border: 1px solid #FFF
+  margin-bottom: 1em

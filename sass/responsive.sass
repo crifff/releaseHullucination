@@ -2,16 +2,45 @@
 @import compass/css3
 @import compass/utilities
 
+@media (min-width: 768px)
+  header
+    font-size: 2em
+    margin-top: 7em
+    margin-bottom: 5em
+    h1#logo
+      background-image: url("../image/logo.png")
+      background-repeat: no-repeat
+      height: 165px
+      span
+        visibility: hidden
+    .description
+      margin-top: 0.7em
+      font-size: 1.2em
 
 @media (max-width: 767px)
   body
     margin: 0
     padding: 0
+    background-image: none
+    background-color: #000
 
-  .hero-unit
-    padding: 20px
-    height: 150px
-    @include border-radius(0)
+  header
+    background-image: url("../image/logo_s.png")
+    background-attachment: fixed
+    background-position: 50% 0
+    background-repeat: no-repeat
+    margin: 0
+    padding: 0
+    height: 198px
+    p
+      visibility: hidden
+      height: 0
+    h1
+      visibility: hidden
+      height: 0
 
-  h1
-    font-size: 3em !important
+.span12
+  margin-top: 1em
+
+cite
+  font-size: 1.3em
