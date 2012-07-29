@@ -22,6 +22,7 @@
     <script src="script/audiojs/audio.min.js"></script>
     <script>
 $(function() { 
+
   // Setup the player to autoplay the next track
   var a = audiojs.createAll({
     trackEnded: function() {
@@ -35,6 +36,9 @@ $(function() {
 
   // Load in the first track
   var audio = a[0];
+  first = $('ol a').attr('data-src');
+  $('ol li').first().addClass('playing');
+  audio.load(first);
 
   // Load in a track on click
   $('ol li').click(function(e) {
@@ -68,9 +72,6 @@ $(function() {
   })
 });
     </script>
-    <style type="text/css">
-     .audiojs{visibility:hidden;height:0;width:0}
-    </style>
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="../assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-144-precomposed.png">
@@ -100,7 +101,7 @@ $(function() {
             </div>
             <ol>
               <li class="track">
-                <div class="play"><a data-src="music/01.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
+                <div class="play"><a data-src="music/01.mp3"></a></div>
                 <div class="info">
                   <cite>Synchronicity - 眠るあなたへ-</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -108,7 +109,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/02.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
+                <div class="play"><a data-src="music/02.mp3"></i></a></div>
                 <div class="info">
                   <cite>HauntedPlaces</cite>
                   <p>Music: emi / Lyrics: emi <br/>/ Arrangement: kaorin</p>
@@ -116,7 +117,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/03.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/03.mp3"></a></div>
                 <div class="info">
                   <cite>LOVERS KISS</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -124,7 +125,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/04.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/04.mp3"></a></div>
                 <div class="info">
                   <cite>Night Hollow</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -133,7 +134,7 @@ $(function() {
               </li>
 
               <li class="track">
-                <div class="play"><a  data-src="music/05.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a  data-src="music/05.mp3"></a></div>
                 <div class="info">
                   <cite>Chronic Deja Vu</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -141,7 +142,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/06.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/06.mp3"></a></div>
                 <div class="info">
                   <cite>ENIGMMA</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -149,7 +150,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/07.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/07.mp3"></a></div>
                 <div class="info">
                   <cite>青い月</cite>
                   <p>Music: emi / Lyrics: emi <br/>/ Arrangement: kaorin</p>
@@ -202,7 +203,7 @@ $(function() {
               <dt>頒布</dt>
               <dd>コミックマーケット82 8/11（土）西く−08a</dd>
               <dt>頒布物</dt>
-              <dd>2nd オリジナルボーカルアルバム「Release hallcination」</dd>
+              <dd>2nd オリジナルボーカルアルバム「Release hallcination」<br><img class="jacket" src="image/jacket.jpg"></dd>
               <dt>頒布形態</dt>
               <dd>音楽CD</dd>
               <dt>価格</dt>

@@ -5430,21 +5430,26 @@ body {
   color: white;
   text-shadow: 0 0 5px black, 0 0 5px black;
   width: 100%;
-  background-color: black;
-  background-image: url("../image/background.jpg");
-  background-attachment: fixed;
-  background-position: 50% 80%;
-  background-repeat: no-repeat;
 }
 
-/* line 16, ../sass/screen.sass */
+/* line 11, ../sass/screen.sass */
 a {
   text-shadow: none;
 }
 
-/* line 20, ../sass/screen.sass */
+/* line 14, ../sass/screen.sass */
 h1, h2, h3, h4 {
   font-family: serif;
+}
+
+/* line 17, ../sass/screen.sass */
+.info {
+  color: #999999;
+}
+
+/* line 19, ../sass/screen.sass */
+.playing .info {
+  color: white;
 }
 
 /* line 22, ../sass/screen.sass */
@@ -5546,7 +5551,13 @@ footer dt {
   margin: 0;
 }
 
-/* line 86, ../sass/screen.sass */
+/* line 85, ../sass/screen.sass */
+.jacket {
+  margin: 1em;
+  border: 1px solid white;
+}
+
+/* line 89, ../sass/screen.sass */
 .banner {
   border: 1px solid white;
   margin-bottom: 1em;

@@ -2,7 +2,15 @@
 @import compass/css3
 @import compass/utilities
 
+$background_color: #000
+//forPC
 @media (min-width: 768px)
+  body
+    background-attachment: fixed
+    background-color: $background_color
+    background-image: url("../image/background.jpg")
+    background-position: 50% 0%
+    background-repeat: no-repeat
   header
     font-size: 2em
     margin-top: 7em
@@ -17,6 +25,12 @@
       margin-top: 0.7em
       font-size: 1.2em
 
+  .audiojs
+    margin-left: 19px
+    margin-bottom: 2em
+
+
+//forSmartPhone
 @media (max-width: 767px)
   body
     margin: 0
@@ -26,7 +40,6 @@
 
   header
     background-image: url("../image/logo_s.png")
-    background-attachment: fixed
     background-position: 50% 0
     background-repeat: no-repeat
     margin: 0
@@ -39,8 +52,13 @@
       visibility: hidden
       height: 0
 
-.span12
-  margin-top: 1em
+  .span12
+    margin-top: 1em
 
-cite
-  font-size: 1.3em
+  cite
+    font-size: 1.5em
+
+  .audiojs
+    width: 320px
+    .scrubber
+      width: 140px
