@@ -1,5 +1,5 @@
-/* line 2, ../sass/ie.sass */
-.play {
+/* line 1, ../sass/ie.sass */
+.play, .play .btn, .play .btn i {
   visibility: none;
   width: 0;
   height: 0;
