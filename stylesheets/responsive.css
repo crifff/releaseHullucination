@@ -1037,33 +1037,33 @@
   /* line 14, ../sass/responsive.sass */
   header {
     font-size: 2em;
-    margin-top: 7em;
+    margin-top: 2em;
     margin-bottom: 5em;
   }
   /* line 18, ../sass/responsive.sass */
+  header .poetic {
+    text-align: center;
+    line-height: 4em;
+    margin-bottom: 2em;
+  }
+  /* line 22, ../sass/responsive.sass */
   header h1#logo {
     background-image: url("../image/logo.png");
     background-repeat: no-repeat;
     height: 165px;
   }
-  /* line 22, ../sass/responsive.sass */
+  /* line 26, ../sass/responsive.sass */
   header h1#logo span {
     visibility: hidden;
   }
-  /* line 24, ../sass/responsive.sass */
+  /* line 28, ../sass/responsive.sass */
   header .description {
     margin-top: 0.7em;
     font-size: 1.2em;
   }
-
-  /* line 28, ../sass/responsive.sass */
-  .audiojs {
-    margin-left: 19px;
-    margin-bottom: 2em;
-  }
 }
 @media (max-width: 767px) {
-  /* line 35, ../sass/responsive.sass */
+  /* line 36, ../sass/responsive.sass */
   body {
     margin: 0;
     padding: 0;
@@ -1071,7 +1071,7 @@
     background-color: black;
   }
 
-  /* line 41, ../sass/responsive.sass */
+  /* line 42, ../sass/responsive.sass */
   header {
     background-image: url("../image/logo_s.png");
     background-position: 50% 0;
@@ -1080,33 +1080,24 @@
     padding: 0;
     height: 198px;
   }
-  /* line 48, ../sass/responsive.sass */
+  /* line 49, ../sass/responsive.sass */
   header p {
     visibility: hidden;
     height: 0;
   }
-  /* line 51, ../sass/responsive.sass */
+  /* line 52, ../sass/responsive.sass */
   header h1 {
     visibility: hidden;
     height: 0;
   }
 
-  /* line 55, ../sass/responsive.sass */
+  /* line 56, ../sass/responsive.sass */
   .span12 {
     margin-top: 1em;
   }
 
-  /* line 58, ../sass/responsive.sass */
+  /* line 59, ../sass/responsive.sass */
   cite {
     font-size: 1.5em;
-  }
-
-  /* line 61, ../sass/responsive.sass */
-  .audiojs {
-    width: 320px;
-  }
-  /* line 63, ../sass/responsive.sass */
-  .audiojs .scrubber {
-    width: 140px;
   }
 }

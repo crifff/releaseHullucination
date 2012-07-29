@@ -14,11 +14,6 @@ a
 h1,h2,h3,h4
   font-family: serif
 
-.info
-  color: #999
-.playing .info
-  color: #FFF
-  
 cite
   font-family: 'Fredericka the Great', serif
 
@@ -48,6 +43,8 @@ h2
 
 cite
   font-size: 2em
+  span
+    font-size: 0.7em
 
 ol
   margin: 8px 0 6px 19px
@@ -81,7 +78,7 @@ footer
   text-align: center
   dt
     margin: 0
-    
+
 .jacket
   margin: 1em
   border: 1px solid #FFF
@@ -89,3 +86,11 @@ footer
 .banner
   border: 1px solid #FFF
   margin-bottom: 1em
+
+.audiojs
+  width: 0
+  height: 0
+  visibility: hidden
+  
+.playing .play
+  display: block

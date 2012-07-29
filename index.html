@@ -12,6 +12,9 @@
   <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
   <link href="stylesheets/screen.css" rel="stylesheet">
   <link href="stylesheets/responsive.css" rel="stylesheet">
+    <!--[if IE]>
+    <link href="stylesheets/ie.css" rel="stylesheet">
+    <![endif]-->
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -36,19 +39,18 @@ $(function() {
 
   // Load in the first track
   var audio = a[0];
-  first = $('ol a').attr('data-src');
-  $('ol li').first().addClass('playing');
-  audio.load(first);
 
   // Load in a track on click
   $('ol li').click(function(e) {
     e.preventDefault();
     if($(this).hasClass('playing')) {
+      $(this).find('.play_music').removeClass('btn-danger').addClass('btn-primary').children('i').removeClass('icon-stop').addClass('icon-play');
       audio.playPause();
       $(this).removeClass('playing');
     }else{
-      $(this).addClass('playing').siblings().removeClass('playing');
+      $(this).addClass('playing').siblings().removeClass('playing').find('.play_music').removeClass('btn-danger').addClass('btn-primary').children('i').removeClass('icon-stop').addClass('icon-play');
       audio.load($('a', this).attr('data-src'));
+      $(this).find('.play_music').removeClass('btn-primary').addClass('btn-danger').children('i').removeClass('icon-play').addClass('icon-stop');
       audio.play();
     }
   });
@@ -80,14 +82,40 @@ $(function() {
   <body>
     <div class="container">
       <header>
-        <p>PHANTAS-MAGORIA 2nd オリジナルボーカルアルバム 「Release Hullcination」</p>
-        <h1 id="logo"><span>Release Hullcination</span></h1>
+        <p class="poetic">生きることと<br/> 死ぬことと<br/>どちらも辛いものだとしたら<br/>答えは何処にあるのだろうか<br/>
+        </p>
+
+        <p>PHANTAS-MAGORIA 2nd　オルタナティヴ・メタルアルバム</p>
+        <h1 id="logo"><span>Release hullcination</span></h1>
         <p class="description">コミックマーケット82 8/11(土) 西く−08a</p>
         <!--
         <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
       -->
     </header>
-
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="row-fluid">
+          <div class="span6">
+            <h2>Infomation</h2>
+          </div>
+          <div class="span6">
+            <dl>
+              <dt>サークル名</dt>
+              <dd><a href="http://phantas-magoria.info/">PHANTAS-MAGORIA/emi</a></dd>
+              <dt>頒布</dt>
+              <dd>コミックマーケット82 8/11（土）西く−08a</dd>
+              <dt>頒布物</dt>
+              <dd>2nd オリジナルボーカルアルバム「Release hallcination」<br><img class="jacket" src="image/jacket.jpg"></dd>
+              <dt>頒布形態</dt>
+              <dd>音楽CD</dd>
+              <dt>価格</dt>
+              <dd>¥1,000</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="row-fluid">
       <div class="span12">
@@ -101,15 +129,15 @@ $(function() {
             </div>
             <ol>
               <li class="track">
-                <div class="play"><a data-src="music/01.mp3"></a></div>
+                <div class="play"><a data-src="music/01.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
                 <div class="info">
-                  <cite>Synchronicity - 眠るあなたへ-</cite>
+                  <cite>Synchronicity <span>-眠る貴方へ-</span></cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
                 </div>
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/02.mp3"></i></a></div>
+                <div class="play"><a data-src="music/02.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
                 <div class="info">
                   <cite>HauntedPlaces</cite>
                   <p>Music: emi / Lyrics: emi <br/>/ Arrangement: kaorin</p>
@@ -117,7 +145,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/03.mp3"></a></div>
+                <div class="play"><a data-src="music/03.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>LOVERS KISS</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -125,7 +153,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/04.mp3"></a></div>
+                <div class="play"><a data-src="music/04.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>Night Hollow</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -134,7 +162,7 @@ $(function() {
               </li>
 
               <li class="track">
-                <div class="play"><a  data-src="music/05.mp3"></a></div>
+                <div class="play"><a  data-src="music/05.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>Chronic Deja Vu</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -142,7 +170,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/06.mp3"></a></div>
+                <div class="play"><a data-src="music/06.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>ENIGMMA</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -150,7 +178,7 @@ $(function() {
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/07.mp3"></a></div>
+                <div class="play"><a data-src="music/07.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>青い月</cite>
                   <p>Music: emi / Lyrics: emi <br/>/ Arrangement: kaorin</p>
@@ -163,6 +191,18 @@ $(function() {
       </div>
     </div>
 
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="row-fluid">
+          <div class="span6">
+            <h2>Cross Fade Demo</h2>
+          </div>
+          <div class="span6">
+            <iframe width="420" height="315" src="http://www.youtube.com/embed/Td9lO0IqTxI" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row-fluid">
       <div class="span12">
         <div class="row-fluid">
@@ -190,29 +230,7 @@ $(function() {
       </div>
     </div>
 
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="row-fluid">
-          <div class="span6">
-            <h2>Infomation</h2>
-          </div>
-          <div class="span6">
-            <dl>
-              <dt>サークル名</dt>
-              <dd><a href="http://phantas-magoria.info/">PHANTAS-MAGORIA/emi</a></dd>
-              <dt>頒布</dt>
-              <dd>コミックマーケット82 8/11（土）西く−08a</dd>
-              <dt>頒布物</dt>
-              <dd>2nd オリジナルボーカルアルバム「Release hallcination」<br><img class="jacket" src="image/jacket.jpg"></dd>
-              <dt>頒布形態</dt>
-              <dd>音楽CD</dd>
-              <dt>価格</dt>
-              <dd>¥1,000</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     
 
