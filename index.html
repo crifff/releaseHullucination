@@ -19,7 +19,58 @@
     <![endif]-->
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="script/audio.js"></script>
+    <script src="script/audiojs/audio.min.js"></script>
+    <script>
+$(function() { 
+  // Setup the player to autoplay the next track
+  var a = audiojs.createAll({
+    trackEnded: function() {
+      var next = $('ol li.playing').next();
+      if (!next.length) next = $('ol li').first();
+      next.addClass('playing').siblings().removeClass('playing');
+      audio.load($('a', next).attr('data-src'));
+      audio.play();
+    }
+  });
+
+  // Load in the first track
+  var audio = a[0];
+
+  // Load in a track on click
+  $('ol li').click(function(e) {
+    e.preventDefault();
+    if($(this).hasClass('playing')) {
+      audio.playPause();
+      $(this).removeClass('playing');
+    }else{
+      $(this).addClass('playing').siblings().removeClass('playing');
+      audio.load($('a', this).attr('data-src'));
+      audio.play();
+    }
+  });
+  // Keyboard shortcuts
+  $(document).keydown(function(e) {
+    var unicode = e.charCode ? e.charCode : e.keyCode;
+    // right arrow
+    if (unicode == 39) {
+      var next = $('li.playing').next();
+      if (!next.length) next = $('ol li').first();
+      next.click();
+      // back arrow
+    } else if (unicode == 37) {
+      var prev = $('li.playing').prev();
+      if (!prev.length) prev = $('ol li').last();
+      prev.click();
+      // spacebar
+    } else if (unicode == 32) {
+      audio.playPause();
+    }
+  })
+});
+    </script>
+    <style type="text/css">
+     .audiojs{visibility:hidden;height:0;width:0}
+    </style>
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="../assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-144-precomposed.png">
@@ -44,9 +95,12 @@
         <h2>Trak List</h2>
           </div>
           <div class="span6">
+            <div>
+            <audio preload="none"/>
+            </div>
             <ol>
               <li class="track">
-                <div class="play"><a data-src="music/01" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
+                <div class="play"><a data-src="music/01.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
                 <div class="info">
                   <cite>Synchronicity - 眠るあなたへ-</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -54,15 +108,15 @@
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/02" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
+                <div class="play"><a data-src="music/02.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white"></i></a></div>
                 <div class="info">
                   <cite>HauntedPlaces</cite>
-                  <p>Music: kaorin / Lyrics: emi <br/>/ Arrangement: kaorin</p>
+                  <p>Music: emi / Lyrics: emi <br/>/ Arrangement: kaorin</p>
                 </div>
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/03" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/03.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>LOVERS KISS</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -70,7 +124,7 @@
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/04" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/04.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>Night Hollow</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -79,7 +133,7 @@
               </li>
 
               <li class="track">
-                <div class="play"><a  data-src="music/05" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a  data-src="music/05.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>Chronic Deja Vu</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -87,7 +141,7 @@
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/06" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/06.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>ENIGMMA</cite>
                   <p>AllMusic: kaorin / Lyrics: emi</p>
@@ -95,10 +149,10 @@
                 <div class="clearfix"></div>
               </li>
               <li class="track">
-                <div class="play"><a data-src="music/07" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
+                <div class="play"><a data-src="music/07.mp3" class="play_music btn btn-primary"><i class="icon-play icon-white">&nbsp;</i></a></div>
                 <div class="info">
                   <cite>青い月</cite>
-                  <p>AllMusic: kaorin / Lyrics: emi <br/>/ Arrangement: kaorin</p>
+                  <p>Music: emi / Lyrics: emi <br/>/ Arrangement: kaorin</p>
                 </div>
               </div>
               <div class="clearfix"></div>
